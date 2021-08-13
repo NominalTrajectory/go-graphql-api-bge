@@ -1,0 +1,22 @@
+type Device {
+  _id: String!
+  title: String!
+  description: String!
+  specifications: [String!]!
+}
+
+type Query {
+  device(id: String!): Device!
+  devices: [Device!]!
+}
+
+input NewDevice {
+  title: String!
+  description: String!
+  specifications: [String!]!
+}
+
+type Mutation {
+  addDevice(input: NewDevice): Device!
+}
+
